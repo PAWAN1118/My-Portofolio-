@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #5c53db;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 98%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.topnav h2 {
+    margin: 0;
+}
+
+.topnav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.topnav ul li {
+    margin: 0 15px;
+}
+
+.topnav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.topnav ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-top: 80px;
+}
+
+section {
+    padding: 60px;
+    text-align: center;
+}
+
+.profile-home {
+    width: 280px;
+    height: 380px;
+    border-radius: 70%;
+    display: block;
+    margin: 20px auto;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#home {
+    background: #6c63ff;
+    color: white;
+    padding: 80px 20px;
+}
+
+#about {
+    background: white;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: #5c53db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+.resume-btn {
+    background: #ffcc00;
+    color: #333;
+}
+
+.resume-btn:hover {
+    background: #e6b800;
+}
+
+#skills {
+    background: #fff;
+}
+
+.skill {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.progress {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.c { width: 100%; background: #5c53db; }
+.python { width: 90%; background: #5c53db; }
+.java { width: 85%; background: #5c53db; }
+.sql { width: 75%; background: #5c53db; }
+
+#projects {
+    background: #e8e8e8;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#contact {
+    background: #222;
+    color: white;
+    padding: 40px;
+}
+
+#contact a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}

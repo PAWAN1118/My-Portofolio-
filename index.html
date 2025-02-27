@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawankumar - AI/ML Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6A1B9A;
+            --secondary-color: #f8f8f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 100px 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--secondary-color);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(106,27,154,0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .resume-button {
+            padding: 15px 40px;
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .resume-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        /* Experience Section */
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            position: relative;
+            padding: 30px;
+            margin: 40px 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 30px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .experience-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .experience-date {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .experience-list {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .experience-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .experience-list li::before {
+            content: "▹";
+            color: var(--primary-color);
+            position: absolute;
+            left: -20px;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background: #ddd;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 30px 60px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                max-width: 300px;
+                order: -1;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+
+            .logo img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .experience-card::before {
+                left: -15px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .resume-button {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="profile.jpg" alt="Pawankumar">
+            </div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AI & ML Developer</h1>
+                <p>Passionate about creating intelligent solutions through machine learning and automation</p>
+                <div class="button-group">
+                    <button class="cta-button">View My Work</button>
+                    <a href="resume.pdf" download class="resume-button">Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Pawankumar">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-text">I'm a Computer Science student specializing in AI & ML, with hands-on experience in developing machine learning models and full-stack applications. Currently pursuing my B.Tech at Anil Neerukonda Institute of Technology and Sciences.</p>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Full Stack Development Intern</h3>
+                <div class="experience-date">Jan 2025 - Mar 2025</div>
+                <div class="company">Wipro</div>
+                <ul class="experience-list">
+                    <li>Developed and maintained full-stack web applications using modern technologies</li>
+                    <li>Collaborated with cross-functional teams to implement new features</li>
+                    <li>Optimized application performance through code refactoring</li>
+                    <li>Implemented RESTful APIs and integrated third-party services</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <h3>Machine Learning Intern</h3>
+                <div class="experience-date">Jun 2024 - Aug 2024</div>
+                <div class="company">Embrizon Technologies (in collaboration with Walmart)</div>
+                <ul class="experience-list">
+                    <li>Developed machine learning models for predictive analytics</li>
+                    <li>Performed data preprocessing and feature engineering</li>
+                    <li>Created automated data pipelines using Python</li>
+                    <li>Implemented NLP solutions for customer feedback analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Machine Learning</h3>
+                <p>Python, TensorFlow, Data Analysis</p>
+            </div>
+            <div class="skill-card">
+                <h3>Web Development</h3>
+                <p>HTML/CSS, JavaScript, Full Stack</p>
+            </div>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>C, Java, Data Structures</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project1.jpg" alt="Healthcare Assistant">
+                </div>
+                <div class="project-info">
+                    <h3>Smart Healthcare Assistant</h3>
+                    <p>ML-powered healthcare system using TensorFlow</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project2.jpg" alt="Financial Analysis">
+                </div>
+                <div class="project-info">
+                    <h3>Financial Sentiment Analysis</h3>
+                    <p>Stock market prediction system</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="project3.jpg" alt="ATM Simulator">
+                </div>
+                <div class="project-info">
+                    <h3>ATM Simulation System</h3>
+                    <p>Java-based banking simulation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <p>Let's connect and discuss AI opportunities!</p>
+            <a href="resume.pdf" download class="resume-button" style="margin-top: 20px;">Download Resume</a>
+            <div class="social-links">
+                <a href="https://github.com/PAWAN1118" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:nimmakayalapawankumar7@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/pawan-kumar-nimmakayala-3a69042a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
